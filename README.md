@@ -10,6 +10,10 @@ It leverages Puppet, expecting Puppet to be using Foreman as an ENC, in there yo
 as parameters and such. When the box builds, it makes a query to its puppet master to get a dump of the
 parameters foreman has for the node and then it uses them to setup the networking. 
 
+It also reorganises the interfaces based on the BUS ID, this means, the first bus will become eth0, it will
+then map that busid to the mac of that device and create the interfaces in order from eth0 to eth<n>
+based on the busid of the server.
+
 Examples
 ========
 
